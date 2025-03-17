@@ -1,20 +1,18 @@
 <?php
 
-$servername = "localhost:3306";
-$username = "root";
-$password = "";
-$dbname = "teste";
+    $servername = "localhost";
+    $username ="root";
+    $password ="Senai@118";
+    $dbname ="teste";
 
-try {
-    // Confere se as informações estão corretas
-    $conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Verifica se houve algum erro na conexão
-    if ($conn->connect_error) {
-        throw new Exception("Falha na conexão: " . $conn->connect_error);
-    }
-} catch (Exception $e) {
-    // Exibe uma mensagem de erro amigável
-    echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
+if ($conn->connect_error){
+
+    echo " Erro de conexão " . $conn->connect_error;
+
+} else {
+    echo "Conexão bem-sucedida";
 }
+
 ?>
